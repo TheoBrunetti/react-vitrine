@@ -4,6 +4,7 @@ import Mouse from "../components/Mouse";
 import SocialNetwork from "../components/SocialNetwork";
 import DynamicText from "../components/DynamicText";
 import Buttons from "../components/Buttons";
+import { motion } from "framer-motion";
 
 const Home = () => {
     return (
@@ -14,7 +15,18 @@ const Home = () => {
                 <SocialNetwork />
                 <div className="home-main">
                     <div className="main-content">
-                        <h1>React Vitrine</h1>
+                        <motion.h1
+                            drag
+                            // onDragEnd
+                            dragConstraints={{
+                                left: -250,
+                                right: 950,
+                                top: -200,
+                                bottom: 250,
+                            }}
+                        >
+                            React Vitrine
+                        </motion.h1>
                         <h2>
                             <DynamicText />
                         </h2>
